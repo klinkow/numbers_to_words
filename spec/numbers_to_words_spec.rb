@@ -8,12 +8,12 @@ end
 
 describe("Fixnum#number_to_word") do
   it("For the tens place it will write out the number name") do
-    expect(23.number_to_word()).to(eq("twenty-three"))
+    expect(23.number_to_word()).to(eq("twentythree"))
   end
 end
 
 describe("Fixnum#number_to_word") do
   it("For the hundreds place it will write out the number name") do
-    expect(365.number_to_word()).to(eq("three hundred sixty-five"))
+    expect(365.number_to_word()).to(eq("three hundred sixtyfive"))
   end
 end

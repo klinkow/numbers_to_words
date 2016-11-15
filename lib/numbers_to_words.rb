@@ -41,8 +41,8 @@ class Fixnum
     inputted_numbers = input_as_string.split("")
     inputted_numbers = inputted_numbers.map(&:to_i)
     if inputted_numbers.size === 2
-      if inputted_numbers[0] = 1
-        output_string.push(numbers.store(output.join()))
+      if inputted_numbers[0] === 1
+        output_string.push(numbers.fetch(inputted_numbers.join())
       else
         output.push(numbers.fetch(inputted_numbers[0]*10))
         output.push(numbers.fetch(inputted_numbers[1]))
@@ -67,7 +67,6 @@ class Fixnum
       output.push(numbers.fetch(inputted_numbers[2]*10))
       output.push(numbers.fetch(inputted_numbers[3]))
       output_string = output.join()
-
     end
     output_string
   end
