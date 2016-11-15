@@ -36,17 +36,38 @@ class Fixnum
 
   define_method(:number_to_word) do
     output = []
+    output_string = ""
     input_as_string = self.to_s()
     inputted_numbers = input_as_string.split("")
     inputted_numbers = inputted_numbers.map(&:to_i)
     if inputted_numbers.size === 2
-      tens_value = inputted_numbers[0]*10
-      output.push(numbers.fetch(tens_value))
-      output.push("-")
-      ones_value = inputted_numbers[1]
-      output.push(numbers.fetch(ones_value))
+      if inputted_numbers[0] = 1
+        output_string.push(numbers.store(output.join()))
+      else
+        output.push(numbers.fetch(inputted_numbers[0]*10))
+        output.push(numbers.fetch(inputted_numbers[1]))
+        output_string = output.join()
+      end
+    elsif inputted_numbers.size === 1
+      output_string = numbers.fetch(inputted_numbers[0])
+    elsif inputted_numbers.size === 3
+      output.push(numbers.fetch(inputted_numbers[0]))
+      output.push(" hundred ")
+      output.push(numbers.fetch(inputted_numbers[1]*10))
+      output.push(numbers.fetch(inputted_numbers[2]))
       output_string = output.join()
-    else
+    elsif inputted_numbers.size === 4
+      output.push(numbers.fetch(inputted_numbers[0]))
+      output.push(" thousand ")
+      output.push(numbers.fetch(inputted_numbers[1]))
+      if inputted_numbers[1] > 0
+        output.push(" hundred ")
+      else
+      end
+      output.push(numbers.fetch(inputted_numbers[2]*10))
+      output.push(numbers.fetch(inputted_numbers[3]))
+      output_string = output.join()
+
     end
     output_string
   end

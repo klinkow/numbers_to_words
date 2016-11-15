@@ -11,3 +11,9 @@ describe("Fixnum#number_to_word") do
     expect(23.number_to_word()).to(eq("twenty-three"))
   end
 end
+
+describe("Fixnum#number_to_word") do
+  it("For the hundreds place it will write out the number name") do
+    expect(365.number_to_word()).to(eq("three hundred sixty-five"))
+  end
+end
